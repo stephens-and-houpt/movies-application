@@ -14,7 +14,16 @@ import {movies} from '../db.json';
 
 $('#a-button-that-deletes').click((e) => {
     e.preventDefault();
+    let movieName = $('#movie-title').val();
 
+    getMovies().then(data => data.find(movie => movie.title === movieName)).then(data => {
+        const deleteMovie = {
+            method: 'DELETE',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(data)
+        };
+        fetch(`/api/movies/${data.id}`, deleteMovie).then();
+    });
 });
 
 $('#a-button-that-works').click((e) => {
@@ -38,7 +47,7 @@ $('#a-button-that-works').click((e) => {
     };
     getMovies()
         .then(data => data.find(movie => movie.title === movieName)).then(data => {
-        if (data.length === 0) {
+        if (data === undefined) {
             fetch('/api/movies', newMovie).then();
         } else {
             fetch(`/api/movies/${data.id}`, updateMovie).then();
@@ -72,6 +81,3 @@ getMovies().then((movies) => {
 
 
 
-// const postNewMove = (newMovie) =>
-
-// fetch('../db.json', newMovie).then( data => data.json()).then(data => console.log(data));

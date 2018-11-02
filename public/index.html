@@ -4,14 +4,22 @@
     <meta charset="UTF-8" />
     <title>My Application</title>
     <link rel="stylesheet" href="/style.css" />
+
 </head>
 <body>
+
+    <div class="container">
+        <div class="carousel" id="carousel">
+
+        </div>
+    </div>
+
 
     <div class="container">
         <h1>Hello There!</h1>
         <p>To get started, edit <code>src/index.js</code>.</p>
         <input type="text" id="movie-title">
-        <select name="stars" id="star-rating">
+        <select class="dropdown-content" id="star-rating" name="stars">
             <option value="1">1 Stars</option>
             <option value="2">2 Stars</option>
             <option value="3">3 Stars</option>
@@ -29,5 +37,7 @@
     </div>
 
     <script src="/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
 </body>
 </html>
