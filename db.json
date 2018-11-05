@@ -2,23 +2,21 @@
   "movies": [
     {
       "title": "Casablanca",
-      "rating": "4",
-      "id": 1
+      "rating": "2",
+      "id": 1,
+      "poster": "casablanca.jpg"
     },
     {
       "title": "Star Wars: A New Hope",
-      "rating": "5",
-      "id": 2
+      "rating": "3",
+      "id": 2,
+      "poster": "anewhope.jpg"
     },
     {
-      "title": "Star bob: A New Hope",
-      "rating": "2",
-      "id": 3
-    },
-    {
-      "title": "Star joe: A New Hope",
-      "rating": "5",
-      "id": 4
+      "title": "Grinch",
+      "rating": "1",
+      "id": 3,
+      "poster": "Movie-Poster-Template-Light-With-Image.jpg"
     }
   ]
 }

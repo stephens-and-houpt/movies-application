@@ -30,15 +30,21 @@ $('#a-button-that-works').click((e) => {
     e.preventDefault();
     let movieName = $('#movie-title').val();
     let stars = $('#star-rating').val();
-    const movieData = {
+    let movieData = {
         title: movieName,
         rating: stars,
         id: movies.length + 1
     };
+    let newMovieData = {
+        title: movieName,
+        rating: stars,
+        id: movies.length + 1,
+        poster: "Movie-Poster-Template-Light-With-Image.jpg"
+    };
     const newMovie = {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify(movieData)
+        body: JSON.stringify(newMovieData)
     };
     const updateMovie = {
         method: 'PATCH',
@@ -59,6 +65,22 @@ $('#a-button-that-works').click((e) => {
 
 for (let movie of movies) {
     $('#movies').append(`<option value="${movie.id}">${movie.title}</option>`);
+    if (movie.id === 1) {
+    $('#movies-on-display').append(
+        `<div class="carousel-item active">
+                    <img class="d-block poster" src="img/${movie.poster}" alt="${movie.title}">
+                    <div class="carousel-caption d-none d-md-block">
+    <h5 class="text-light">${movie.title}</h5>
+  </div>
+                </div>`);
+} else {
+        $('#movies-on-display').append(`<div class="carousel-item">
+                    <img class="d-block poster" src="img/${movie.poster}" alt="${movie.title}">
+                    <div class="carousel-caption d-none d-md-block">
+    <h5 class="text-light">${movie.title}</h5>
+  </div>
+                </div>`);
+    }
 }
 
 $('#movies').change(() => {
