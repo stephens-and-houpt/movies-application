@@ -45,15 +45,17 @@ $('#a-button-that-works').click((e) => {
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify(movieData)
     };
+
     getMovies()
-        .then(data => data.find(movie => movie.title === movieName)).then(data => {
+        .then(data => data.find(movie => movie.id.toString() === $('#movies').val())).then(data => {
         if (data === undefined) {
             fetch('/api/movies', newMovie).then();
         } else {
-            fetch(`/api/movies/${data.id}`, updateMovie).then();
+            fetch(`/api/movies/${data.id}`, updateMovie).then()
         }
     });
 });
+
 
 for (let movie of movies) {
     $('#movies').append(`<option value="${movie.id}">${movie.title}</option>`);
