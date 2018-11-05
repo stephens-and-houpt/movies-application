@@ -16,24 +16,51 @@
     </div>
 
 
-    <div class="container">
+    <div class="container my-5">
+        <div id="movie-go-round" class="carousel slide carousel-fade" data-ride="carousel">
+            <div id="movies-on-display" class="carousel-inner">
+                <!-- imported from js -->
+            </div>
+            <a class="carousel-control-prev" href="#movie-go-round" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#movie-go-round" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+
         <h1>Hello There!</h1>
         <p>To get started, edit <code>src/index.js</code>.</p>
-        <input type="text" id="movie-title">
-        <select class="dropdown-content" id="star-rating" name="stars">
-            <option value="1">1 Stars</option>
-            <option value="2">2 Stars</option>
-            <option value="3">3 Stars</option>
-            <option value="4">4 Stars</option>
-            <option value="5">5 Star</option>
-        </select>
-        <button id="a-button-that-works">A Button That Submits</button>
-        <button id="a-button-that-deletes">A Button That Deletes</button>
+
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text rounded-left" id="inputGroup-sizing-default">Title</span>
+            </div>
+            <input type="text" class="form-control mr-1 rounded-right" id="movie-title">
+            <select class="custom-select mr-1 rounded" id="star-rating" name="stars">
+                <option value="1">1 Stars</option>
+                <option value="2">2 Stars</option>
+                <option value="3">3 Stars</option>
+                <option value="4">4 Stars</option>
+                <option value="5">5 Star</option>
+            </select>
+            <button id="a-button-that-works" class="btn btn-warning mr-1">A Button That Submits</button>
+            <button id="a-button-that-deletes" class="btn btn-danger">A Button That Deletes</button>
+        </div>
+
+
 
         <div id="editor">
-            <select name="movies" id="movies">
-                <option value="0">Make your selection</option>
-            </select>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <label class="input-group-text rounded-left" for="movies">Movies</label>
+                </div>
+                <select class="custom-select rounded-right" id="movies">
+                    <option value="0">Make your selection</option>
+                </select>
+            </div>
         </div>
     </div>
 
