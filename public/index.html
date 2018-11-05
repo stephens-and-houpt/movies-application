@@ -16,7 +16,7 @@
     </div>
 
 
-    <div class="container my-5">
+    <div class="container my-3">
         <div id="movie-go-round" class="carousel slide carousel-fade" data-ride="carousel">
             <div id="movies-on-display" class="carousel-inner">
                 <!-- imported from js -->
@@ -31,8 +31,7 @@
             </a>
         </div>
 
-        <h1>Hello There!</h1>
-        <p>To get started, edit <code>src/index.js</code>.</p>
+        <h1>Movie App!</h1>
 
         <div class="input-group mb-3">
             <div class="input-group-prepend">
@@ -46,8 +45,19 @@
                 <option value="4">4 Stars</option>
                 <option value="5">5 Star</option>
             </select>
-            <button id="a-button-that-works" class="btn btn-warning mr-1">A Button That Submits</button>
-            <button id="a-button-that-deletes" class="btn btn-danger">A Button That Deletes</button>
+            <select class="custom-select mr-1 rounded" id="genre" name="genre">
+                <option value="Action">Action</option>
+                <option value="Sci-fi">Sci-fi</option>
+                <option value="Horror">Horror</option>
+                <option value="Family">Family</option>
+                <option value="Romance">Romance</option>
+                <option value="Western">Western</option>
+                <option value="Documentary">Documentary</option>
+                <option value="Adventure">Adventure</option>
+                <option value="Musical">Musical</option>
+            </select>
+            <button id="a-button-that-works" class="btn btn-warning mr-1">Submit</button>
+            <button id="a-button-that-deletes" class="btn btn-danger">Delete</button>
         </div>
 
 
@@ -62,7 +72,26 @@
                 </select>
             </div>
         </div>
+        <table class="mx-auto w-100 table table-bordered">
+            <thead class="thead-dark">
+            <tr>
+                <th id="title-sort">
+                    Movie Title
+                </th>
+                <th id="rating-sort">
+                    Rating
+                </th>
+                <th id="genre-sort">
+                    Genre
+                </th>
+            </tr>
+            </thead>
+            <tbody id="table-content">
+
+            </tbody>
+        </table>
     </div>
+
 
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

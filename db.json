@@ -4,18 +4,21 @@
       "title": "Casablanca",
       "rating": "2",
       "id": 1,
-      "poster": "casablanca.jpg"
+      "poster": "casablanca.jpg",
+      "genre": "Romance"
     },
     {
       "title": "Star Wars: A New Hope",
       "rating": "3",
       "id": 2,
-      "poster": "anewhope.jpg"
+      "poster": "anewhope.jpg",
+      "genre": "Sci-fi"
     },
     {
-      "title": "Grinch",
-      "rating": "1",
-      "id": 3,
+      "title": "Bob's Western Movie",
+      "rating": "3",
+      "id": 4,
+      "genre": "Action",
       "poster": "Movie-Poster-Template-Light-With-Image.jpg"
     }
   ]

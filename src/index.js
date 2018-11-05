@@ -30,15 +30,18 @@ $('#a-button-that-works').click((e) => {
     e.preventDefault();
     let movieName = $('#movie-title').val();
     let stars = $('#star-rating').val();
+    let genre = $('#genre').val();
     let movieData = {
         title: movieName,
         rating: stars,
+        genre,
         id: movies.length + 1
     };
     let newMovieData = {
         title: movieName,
         rating: stars,
         id: movies.length + 1,
+        genre,
         poster: "Movie-Poster-Template-Light-With-Image.jpg"
     };
     const newMovie = {
@@ -104,4 +107,56 @@ getMovies().then((movies) => {
 });
 
 
+for (let movie of movies) {
+    $('#table-content').append(`<tr><td>${movie.title}</td><td>${movie.rating} Stars</td><td>${movie.genre}</td></tr>`)}
 
+$('#title-sort').click(function () {
+    $('#table-content').html("");
+    getMovies().then(data => data.sort(data.title)).then(movies => {
+
+        movies.sort(function(a, b){
+            var x = a.title.toLowerCase();
+            var y = b.title.toLowerCase();
+            if (x < y) {return -1;}
+            if (x > y) {return 1;}
+            return 0;
+        });
+        for (let movie of movies) {
+            $('#table-content').append(`<tr><td>${movie.title}</td><td>${movie.rating} Stars</td><td>${movie.genre}</td></tr>`)
+        }
+    });
+});
+
+$('#rating-sort').click(function () {
+    $('#table-content').html("");
+    getMovies().then(data => data.sort(data.title)).then(movies => {
+
+        movies.sort(function(a, b){
+            var x = a.rating.toLowerCase();
+            var y = b.rating.toLowerCase();
+            if (x < y) {return -1;}
+            if (x > y) {return 1;}
+            return 0;
+        });
+        for (let movie of movies) {
+            $('#table-content').append(`<tr><td>${movie.title}</td><td>${movie.rating} Stars</td><td>${movie.genre}</td></tr>`)
+        }
+    });
+});
+
+$('#genre-sort').click(function () {
+    $('#table-content').html("");
+    getMovies().then(data => data.sort(data.title)).then(movies => {
+
+        movies.sort(function(a, b){
+            var x = a.genre.toLowerCase();
+            var y = b.genre.toLowerCase();
+            if (x < y) {return -1;}
+            if (x > y) {return 1;}
+            return 0;
+        });
+        for (let movie of movies) {
+            $('#table-content').append(`<tr><td>${movie.title}</td><td>${movie.rating} Stars</td><td>${movie.genre}</td></tr>`)
+        }
+    });
+});
