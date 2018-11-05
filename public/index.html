@@ -4,19 +4,15 @@
     <meta charset="UTF-8" />
     <title>My Application</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Philosopher|Ubuntu" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css"/>
 
 </head>
 <body>
 
-    <div class="container">
-        <div class="carousel" id="carousel">
 
-        </div>
-    </div>
-
-
-    <div class="container my-3">
+    <div class="container shadow-lg pt-3 pb-2">
         <div id="movie-go-round" class="carousel slide carousel-fade" data-ride="carousel">
             <div id="movies-on-display" class="carousel-inner">
                 <!-- imported from js -->
@@ -31,7 +27,7 @@
             </a>
         </div>
 
-        <h1>Movie App!</h1>
+        <h1>Movie Mania</h1>
 
         <div class="input-group mb-3">
             <div class="input-group-prepend">
@@ -55,8 +51,12 @@
                 <option value="Documentary">Documentary</option>
                 <option value="Adventure">Adventure</option>
                 <option value="Musical">Musical</option>
+                <option value="Comedy">Comedy</option>
+                <option value="Drama">Drama</option>
             </select>
-            <button id="a-button-that-works" class="btn btn-warning mr-1">Submit</button>
+            <button id="a-button-that-works" class="btn btn-warning mr-1">
+                <img src="img/yellow-monster.png" alt="nothing to worry about" class="monster">
+                Submit</button>
             <button id="a-button-that-deletes" class="btn btn-danger">Delete</button>
         </div>
 

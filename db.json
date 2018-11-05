@@ -2,24 +2,101 @@
   "movies": [
     {
       "title": "Casablanca",
-      "rating": "2",
+      "rating": "4",
       "id": 1,
       "poster": "casablanca.jpg",
-      "genre": "Romance"
+      "genre": "Drama"
     },
     {
       "title": "Star Wars: A New Hope",
-      "rating": "3",
+      "rating": "5",
       "id": 2,
       "poster": "anewhope.jpg",
       "genre": "Sci-fi"
     },
     {
-      "title": "Bob's Western Movie",
+      "title": "Be Kind Rewind",
+      "rating": "3",
+      "id": 3,
+      "genre": "Comedy",
+      "poster": "bekindrewind.jpg"
+    },
+    {
+      "title": "Rush Hour",
       "rating": "3",
       "id": 4,
       "genre": "Action",
-      "poster": "Movie-Poster-Template-Light-With-Image.jpg"
+      "poster": "rushhour.jpg"
+    },
+    {
+      "title": "Rush Hour 2",
+      "rating": "4",
+      "id": 5,
+      "genre": "Action",
+      "poster": "rushhour2.jpg"
+    },
+    {
+      "title": "Rush Hour 3",
+      "rating": "1",
+      "id": 6,
+      "genre": "Action",
+      "poster": "rushhour3.jpg"
+    },
+    {
+      "title": "Black Dynamite",
+      "rating": "4",
+      "id": 7,
+      "genre": "Comedy",
+      "poster": "blackdynamite.jpg"
+    },
+    {
+      "title": "Dune",
+      "rating": "3",
+      "id": 8,
+      "genre": "Sci-fi",
+      "poster": "dune.jpg"
+    },
+    {
+      "title": "Citizen Kane",
+      "rating": "5",
+      "id": 9,
+      "genre": "Drama",
+      "poster": "citizenkane.jpg"
+    },
+    {
+      "title": "Friday The 13th",
+      "rating": "3",
+      "id": 10,
+      "genre": "Horror",
+      "poster": "fridaythethirteenth.jpg"
+    },
+    {
+      "title": "The Room",
+      "rating": "1",
+      "id": 11,
+      "genre": "Drama",
+      "poster": "theroom.jpg"
+    },
+    {
+      "title": "The Incredibles",
+      "rating": "5",
+      "id": 12,
+      "genre": "Family",
+      "poster": "incredibles.jpg"
+    },
+    {
+      "title": "The Incredibles 2",
+      "rating": "3",
+      "id": 13,
+      "genre": "Family",
+      "poster": "incredibles2.jpg"
+    },
+    {
+      "title": "Thankskilling",
+      "rating": "2",
+      "id": 14,
+      "genre": "Family",
+      "poster": "thankskilling.jpg"
     }
   ]
 }

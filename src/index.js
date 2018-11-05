@@ -26,6 +26,63 @@ $('#a-button-that-deletes').click((e) => {
     });
 });
 
+const makeTableHTML = (movie) => {
+    $('#table-content').append(`<tr>`);
+    $('#table-content').append(`<td>${movie.title}</td>`);
+    switch (movie.rating) {
+        case("5"):
+            $('#table-content').append(`<td><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></td>`);
+            break;
+        case("4"):
+            $('#table-content').append(`<td><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></td>`);
+            break;
+        case("3"):
+            $('#table-content').append(`<td><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></td>`);
+            break;
+        case("2"):
+            $('#table-content').append(`<td><i class="fas fa-star"></i><i class="fas fa-star"></i></td>`);
+            break;
+        default:
+            $('#table-content').append(`<td><i class="fas fa-star"></i></td>`);
+            break;
+    }
+    switch (movie.genre) {
+        case("Horror"):
+            $('#table-content').append(`<td><i class="fas fa-ghost"></i></td></tr>`);
+            break;
+        case("Romance"):
+            $('#table-content').append(`<td><i class="fas fa-heart"></i></td></tr>`);
+            break;
+        case("Sci-fi"):
+            $('#table-content').append(`<td><i class="fas fa-user-astronaut"></i></td></tr>`);
+            break;
+        case("Musical"):
+            $('#table-content').append(`<td><i class="fas fa-music"></i></td></tr>`);
+            break;
+        case("Family"):
+            $('#table-content').append(`<td><i class="fas fa-users"></i></td></tr>`);
+            break;
+        case("Documentary"):
+            $('#table-content').append(`<td><i class="fas fa-landmark"></i></td></tr>`);
+            break;
+        case("Western"):
+            $('#table-content').append(`<td><i class="fas fa-horse"></i></td></tr>`);
+            break;
+        case("Action"):
+            $('#table-content').append(`<td><i class="fas fa-fist-raised"></i></td></tr>`);
+            break;
+        case("Comedy"):
+            $('#table-content').append(`<td><i class="fas fa-grin-squint-tears"></i></td></tr>`);
+            break;
+        case("Drama"):
+            $('#table-content').append(`<td><i class="fas fa-theater-masks"></i></td></tr>`);
+            break;
+        default:
+            $('#table-content').append(`<td><i class="fas fa-globe"></i></td></tr>`);
+            break;
+    }
+};
+
 $('#a-button-that-works').click((e) => {
     e.preventDefault();
     let movieName = $('#movie-title').val();
@@ -92,6 +149,7 @@ $('#movies').change(() => {
         .then(data => {
             $('#movie-title').val(data.title);
             $('#star-rating').val(`${data.rating}`);
+            $('#genre').val(`${data.genre}`);
         });
 });
 
@@ -106,12 +164,25 @@ getMovies().then((movies) => {
 
 });
 
-
+$('#table-content').html(`
+    <tr>
+        <td><img src="img/Disk-1s-200px.svg" alt="loading"></td>
+        <td><img src="img/Disk-1s-200px.svg" alt="loading"></td>
+        <td><img src="img/Disk-1s-200px.svg" alt="loading"></td>
+    </tr>`);
+$('#table-content').html("");
 for (let movie of movies) {
-    $('#table-content').append(`<tr><td>${movie.title}</td><td>${movie.rating} Stars</td><td>${movie.genre}</td></tr>`)}
+    makeTableHTML(movie);
+}
+
 
 $('#title-sort').click(function () {
-    $('#table-content').html("");
+    $('#table-content').html(`
+    <tr>
+        <td><img src="img/Disk-1s-200px.svg" alt="loading"></td>
+        <td><img src="img/Disk-1s-200px.svg" alt="loading"></td>
+        <td><img src="img/Disk-1s-200px.svg" alt="loading"></td>
+    </tr>`);
     getMovies().then(data => data.sort(data.title)).then(movies => {
 
         movies.sort(function(a, b){
@@ -121,14 +192,20 @@ $('#title-sort').click(function () {
             if (x > y) {return 1;}
             return 0;
         });
+        $('#table-content').html("");
         for (let movie of movies) {
-            $('#table-content').append(`<tr><td>${movie.title}</td><td>${movie.rating} Stars</td><td>${movie.genre}</td></tr>`)
+            makeTableHTML(movie);
         }
     });
 });
 
 $('#rating-sort').click(function () {
-    $('#table-content').html("");
+    $('#table-content').html(`
+    <tr>
+        <td><img src="img/Disk-1s-200px.svg" alt="loading"></td>
+        <td><img src="img/Disk-1s-200px.svg" alt="loading"></td>
+        <td><img src="img/Disk-1s-200px.svg" alt="loading"></td>
+    </tr>`);
     getMovies().then(data => data.sort(data.title)).then(movies => {
 
         movies.sort(function(a, b){
@@ -138,14 +215,20 @@ $('#rating-sort').click(function () {
             if (x > y) {return 1;}
             return 0;
         });
+        $('#table-content').html("");
         for (let movie of movies) {
-            $('#table-content').append(`<tr><td>${movie.title}</td><td>${movie.rating} Stars</td><td>${movie.genre}</td></tr>`)
+            makeTableHTML(movie);
         }
     });
 });
 
 $('#genre-sort').click(function () {
-    $('#table-content').html("");
+    $('#table-content').html(`
+    <tr>
+        <td><img src="img/Disk-1s-200px.svg" alt="loading"></td>
+        <td><img src="img/Disk-1s-200px.svg" alt="loading"></td>
+        <td><img src="img/Disk-1s-200px.svg" alt="loading"></td>
+    </tr>`);
     getMovies().then(data => data.sort(data.title)).then(movies => {
 
         movies.sort(function(a, b){
@@ -155,8 +238,9 @@ $('#genre-sort').click(function () {
             if (x > y) {return 1;}
             return 0;
         });
+        $('#table-content').html("");
         for (let movie of movies) {
-            $('#table-content').append(`<tr><td>${movie.title}</td><td>${movie.rating} Stars</td><td>${movie.genre}</td></tr>`)
+            makeTableHTML(movie);
         }
     });
 });
