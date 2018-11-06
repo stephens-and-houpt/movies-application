@@ -12,7 +12,7 @@ sayHello('World');
 import {getMovies} from './api.js';
 import {movies} from '../db.json';
 
-$('#a-button-that-deletes').click((e) => {
+$('#a-button-that-deletes').click(e => {
     e.preventDefault();
     $('#table-content').html(`
     <tr>
@@ -94,7 +94,7 @@ const makeTableHTML = (movie) => {
         }
 };
 
-$('#a-button-that-works').click((e) => {
+$('#a-button-that-works').click(e => {
     e.preventDefault();
     $('#table-content').html(`
     <tr>
@@ -138,6 +138,7 @@ $('#a-button-that-works').click((e) => {
             });
         } else {
             fetch(`/api/movies/${data.id}`, updateMovie).then(getMovies).then(movies => {
+                movies.preventDefault();
                 $('#table-content').html("");
                 for (let movie of movies) {
                     makeTableHTML(movie);
@@ -146,27 +147,6 @@ $('#a-button-that-works').click((e) => {
         }
     });
 });
-
-
-for (let movie of movies) {
-    $('#movies').append(`<option value="${movie.id}">${movie.title}</option>`);
-    if (movie.id === 1) {
-    $('#movies-on-display').append(
-        `<div class="carousel-item active">
-                    <img class="d-block poster" src="img/${movie.poster}" alt="${movie.title}">
-                    <div class="carousel-caption d-none d-md-block">
-    <h5 class="text-light shadowed">${movie.title}</h5>
-  </div>
-                </div>`);
-} else {
-        $('#movies-on-display').append(`<div class="carousel-item">
-                    <img class="d-block poster" src="img/${movie.poster}" alt="${movie.title}">
-                    <div class="carousel-caption d-none d-md-block">
-    <h5 class="text-light shadowed">${movie.title}</h5>
-  </div>
-                </div>`);
-    }
-}
 
 $('#movies').change(() => {
     getMovies()
@@ -178,95 +158,121 @@ $('#movies').change(() => {
         });
 });
 
-getMovies().then((movies) => {
-    console.log('Here are all the movies:');
-    movies.forEach(({title, rating, id}) => {
-        console.log(`id#${id} - ${title} - rating: ${rating}`)
-    })
-}).catch((error) => {
-    alert('Oh no! Something went wrong.\nCheck the console for details.');
-    console.log(error);
-
-});
-
 $('#table-content').html(`
     <tr>
         <td><img src="img/Disk-1s-200px.svg" alt="loading"></td>
         <td><img src="img/Disk-1s-200px.svg" alt="loading"></td>
         <td><img src="img/Disk-1s-200px.svg" alt="loading"></td>
     </tr>`);
-$('#table-content').html("");
-for (let movie of movies) {
-    makeTableHTML(movie);
-}
 
+getMovies().then((movies) => {
+    $('#table-content').html("");
+    for (let movie of movies) {
+        makeTableHTML(movie);
+        $('#movies').append(`<option value="${movie.id}">${movie.title}</option>`);
+        if (movie.id === 1) {
+            $('#movies-on-display').append(
+                `<div class="carousel-item active">
+                    <img class="d-block poster" src="img/${movie.poster}" alt="${movie.title}">
+                    <div class="carousel-caption d-none d-md-block">
+    <h5 class="text-light shadowed">${movie.title}</h5>
+  </div>
+                </div>`);
+        } else {
+            $('#movies-on-display').append(`<div class="carousel-item">
+                    <img class="d-block poster" src="img/${movie.poster}" alt="${movie.title}">
+                    <div class="carousel-caption d-none d-md-block">
+    <h5 class="text-light shadowed">${movie.title}</h5>
+  </div>
+                </div>`);
+        }
+    }
+    console.log('Here are all the movies:');
+    movies.forEach(({title, rating, id}) => {
+        console.log(`id#${id} - ${title} - rating: ${rating}`)
+    })
+}).catch((error) => {
+        alert('Oh no! Something went wrong.\nCheck the console for details.');
+        console.log(error);
+    });
 
-$('#title-sort').click(function () {
-    $('#table-content').html(`
+    $('#title-sort').click(function () {
+        $('#table-content').html(`
     <tr>
         <td><img src="img/Disk-1s-200px.svg" alt="loading"></td>
         <td><img src="img/Disk-1s-200px.svg" alt="loading"></td>
         <td><img src="img/Disk-1s-200px.svg" alt="loading"></td>
     </tr>`);
-    getMovies().then(data => data.sort(data.title)).then(movies => {
+        getMovies().then(data => data.sort(data.title)).then(movies => {
 
-        movies.sort(function(a, b){
-            var x = a.title.toLowerCase();
-            var y = b.title.toLowerCase();
-            if (x < y) {return -1;}
-            if (x > y) {return 1;}
-            return 0;
+            movies.sort(function (a, b) {
+                var x = a.title.toLowerCase();
+                var y = b.title.toLowerCase();
+                if (x < y) {
+                    return -1;
+                }
+                if (x > y) {
+                    return 1;
+                }
+                return 0;
+            });
+            $('#table-content').html("");
+            for (let movie of movies) {
+                makeTableHTML(movie);
+            }
         });
-        $('#table-content').html("");
-        for (let movie of movies) {
-            makeTableHTML(movie);
-        }
     });
-});
 
-$('#rating-sort').click(function () {
-    $('#table-content').html(`
+    $('#rating-sort').click(function () {
+        $('#table-content').html(`
     <tr>
         <td><img src="img/Disk-1s-200px.svg" alt="loading"></td>
         <td><img src="img/Disk-1s-200px.svg" alt="loading"></td>
         <td><img src="img/Disk-1s-200px.svg" alt="loading"></td>
     </tr>`);
-    getMovies().then(data => data.sort(data.title)).then(movies => {
+        getMovies().then(data => data.sort(data.title)).then(movies => {
 
-        movies.sort(function(a, b){
-            var x = a.rating.toLowerCase();
-            var y = b.rating.toLowerCase();
-            if (x > y) {return -1;}
-            if (x < y) {return 1;}
-            return 0;
+            movies.sort(function (a, b) {
+                var x = a.rating.toLowerCase();
+                var y = b.rating.toLowerCase();
+                if (x > y) {
+                    return -1;
+                }
+                if (x < y) {
+                    return 1;
+                }
+                return 0;
+            });
+            $('#table-content').html("");
+            for (let movie of movies) {
+                makeTableHTML(movie);
+            }
         });
-        $('#table-content').html("");
-        for (let movie of movies) {
-            makeTableHTML(movie);
-        }
     });
-});
 
-$('#genre-sort').click(function () {
-    $('#table-content').html(`
+    $('#genre-sort').click(function () {
+        $('#table-content').html(`
     <tr>
         <td><img src="img/Disk-1s-200px.svg" alt="loading"></td>
         <td><img src="img/Disk-1s-200px.svg" alt="loading"></td>
         <td><img src="img/Disk-1s-200px.svg" alt="loading"></td>
     </tr>`);
-    getMovies().then(data => data.sort(data.title)).then(movies => {
+        getMovies().then(data => data.sort(data.title)).then(movies => {
 
-        movies.sort(function(a, b){
-            var x = a.genre.toLowerCase();
-            var y = b.genre.toLowerCase();
-            if (x < y) {return -1;}
-            if (x > y) {return 1;}
-            return 0;
+            movies.sort(function (a, b) {
+                var x = a.genre.toLowerCase();
+                var y = b.genre.toLowerCase();
+                if (x < y) {
+                    return -1;
+                }
+                if (x > y) {
+                    return 1;
+                }
+                return 0;
+            });
+            $('#table-content').html("");
+            for (let movie of movies) {
+                makeTableHTML(movie);
+            }
         });
-        $('#table-content').html("");
-        for (let movie of movies) {
-            makeTableHTML(movie);
-        }
     });
-});
-

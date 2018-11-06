@@ -9,21 +9,21 @@
     },
     {
       "title": "Star Wars: A New Hope",
-      "rating": "5",
+      "rating": "4",
       "id": 2,
       "genre": "Sci-fi",
-      "poster": "rushhour2.jpg"
+      "poster": "anewhope.jpg"
     },
     {
       "title": "Citizen Kane",
-      "rating": "5",
+      "rating": "4",
       "id": 3,
       "genre": "Drama",
       "poster": "citizenkane.jpg"
     },
     {
       "title": "Rush Hour",
-      "rating": "3",
+      "rating": "2",
       "id": 4,
       "genre": "Action",
       "poster": "rushhour.jpg"
@@ -37,7 +37,7 @@
     },
     {
       "title": "Rush Hour 3",
-      "rating": "1",
+      "rating": "2",
       "id": 6,
       "genre": "Action",
       "poster": "rushhour3.jpg"
@@ -58,21 +58,21 @@
     },
     {
       "title": "Be Kind Rewind",
-      "rating": "3",
+      "rating": "2",
       "id": 9,
       "genre": "Action",
       "poster": "bekindrewind.jpg"
     },
     {
       "title": "Friday The 13th",
-      "rating": "3",
+      "rating": "2",
       "id": 10,
       "genre": "Horror",
       "poster": "fridaythethirteenth.jpg"
     },
     {
       "title": "Dune",
-      "rating": "4",
+      "rating": "3",
       "id": 11,
       "genre": "Sci-fi",
       "poster": "dune.jpg"
