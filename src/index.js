@@ -12,7 +12,7 @@ sayHello('World');
 import {getMovies} from './api.js';
 import {movies} from '../db.json';
 
-$('#a-button-that-deletes').click(e => {
+$('#a-button-that-deletes').on('click',e => {
     e.preventDefault();
     $('#table-content').html(`
     <tr>
@@ -92,7 +92,7 @@ const makeTableHTML = (movie) => {
         }
 };
 
-$('#a-button-that-works').click(e => {
+$('#a-button-that-works').on('click', e => {
     e.preventDefault();
     $('#table-content').html(`
     <tr>
