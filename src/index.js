@@ -28,11 +28,9 @@ $('#a-button-that-deletes').click(e => {
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(data)
         };
-        fetch(`/api/movies/${data.id}`, deleteMovie).then(getMovies).then(movies => {
+        fetch(`/api/movies/${data.id}`, deleteMovie).then(getMovies).then(() => {
             $('#table-content').html("");
-            for (let movie of movies) {
-                makeTableHTML(movie);
-            }
+            makeItHappen();
         });
     });
 });
@@ -130,19 +128,14 @@ $('#a-button-that-works').click(e => {
     getMovies()
         .then(data => data.find(movie => movie.id.toString() === $('#movies').val())).then(data => {
         if (data === undefined) {
-            fetch('/api/movies', newMovie).then(getMovies).then(movies => {
+            fetch('/api/movies', newMovie).then(getMovies).then(() => {
                 $('#table-content').html("");
-                for (let movie of movies) {
-                    makeTableHTML(movie);
-                }
+                makeItHappen();
             });
         } else {
-            fetch(`/api/movies/${data.id}`, updateMovie).then(getMovies).then(movies => {
-                movies.preventDefault();
+            fetch(`/api/movies/${data.id}`, updateMovie).then(getMovies).then(() => {
                 $('#table-content').html("");
-                for (let movie of movies) {
-                    makeTableHTML(movie);
-                }
+                makeItHappen();
             });
         }
     });
@@ -164,37 +157,40 @@ $('#table-content').html(`
         <td><img src="img/Disk-1s-200px.svg" alt="loading"></td>
         <td><img src="img/Disk-1s-200px.svg" alt="loading"></td>
     </tr>`);
-
-getMovies().then((movies) => {
-    $('#table-content').html("");
-    for (let movie of movies) {
-        makeTableHTML(movie);
-        $('#movies').append(`<option value="${movie.id}">${movie.title}</option>`);
-        if (movie.id === 1) {
-            $('#movies-on-display').append(
-                `<div class="carousel-item active">
+const makeItHappen = () => {
+    getMovies().then((movies) => {
+        $('#table-content').html("");
+        for (let movie of movies) {
+            makeTableHTML(movie);
+            $('#movies').append(`<option value="${movie.id}">${movie.title}</option>`);
+            if (movie.id === 1) {
+                $('#movies-on-display').append(
+                    `<div class="carousel-item active">
                     <img class="d-block poster" src="img/${movie.poster}" alt="${movie.title}">
                     <div class="carousel-caption d-none d-md-block">
     <h5 class="text-light shadowed">${movie.title}</h5>
   </div>
                 </div>`);
-        } else {
-            $('#movies-on-display').append(`<div class="carousel-item">
+            } else {
+                $('#movies-on-display').append(`<div class="carousel-item">
                     <img class="d-block poster" src="img/${movie.poster}" alt="${movie.title}">
                     <div class="carousel-caption d-none d-md-block">
     <h5 class="text-light shadowed">${movie.title}</h5>
   </div>
                 </div>`);
+            }
         }
-    }
-    console.log('Here are all the movies:');
-    movies.forEach(({title, rating, id}) => {
-        console.log(`id#${id} - ${title} - rating: ${rating}`)
-    })
-}).catch((error) => {
+        console.log('Here are all the movies:');
+        movies.forEach(({title, rating, id}) => {
+            console.log(`id#${id} - ${title} - rating: ${rating}`)
+        })
+    }).catch((error) => {
         alert('Oh no! Something went wrong.\nCheck the console for details.');
         console.log(error);
     });
+};
+
+makeItHappen();
 
     $('#title-sort').click(function () {
         $('#table-content').html(`

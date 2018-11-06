@@ -23,7 +23,7 @@
     },
     {
       "title": "Rush Hour",
-      "rating": "2",
+      "rating": "3",
       "id": 4,
       "genre": "Action",
       "poster": "rushhour.jpg"
@@ -37,7 +37,7 @@
     },
     {
       "title": "Rush Hour 3",
-      "rating": "2",
+      "rating": "1",
       "id": 6,
       "genre": "Action",
       "poster": "rushhour3.jpg"
