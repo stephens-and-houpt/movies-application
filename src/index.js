@@ -92,7 +92,7 @@ const makeTableHTML = (movie) => {
         }
 };
 
-$('#a-button-that-works').on('click', e => {
+$('#a-button-that-works').click(e => {
     e.preventDefault();
     $('#table-content').html(`
     <tr>
