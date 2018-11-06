@@ -4,22 +4,22 @@
       "title": "Casablanca",
       "rating": "4",
       "id": 1,
-      "poster": "casablanca.jpg",
-      "genre": "Drama"
+      "genre": "Action",
+      "poster": "casablanca.jpg"
     },
     {
       "title": "Star Wars: A New Hope",
       "rating": "5",
       "id": 2,
-      "poster": "anewhope.jpg",
-      "genre": "Sci-fi"
+      "genre": "Sci-fi",
+      "poster": "rushhour2.jpg"
     },
     {
-      "title": "Be Kind Rewind",
-      "rating": "3",
+      "title": "Citizen Kane",
+      "rating": "5",
       "id": 3,
-      "genre": "Comedy",
-      "poster": "bekindrewind.jpg"
+      "genre": "Drama",
+      "poster": "citizenkane.jpg"
     },
     {
       "title": "Rush Hour",
@@ -50,18 +50,18 @@
       "poster": "blackdynamite.jpg"
     },
     {
-      "title": "Dune",
-      "rating": "3",
+      "title": "The Room",
+      "rating": "1",
       "id": 8,
-      "genre": "Sci-fi",
-      "poster": "dune.jpg"
+      "genre": "Drama",
+      "poster": "theroom.jpg"
     },
     {
-      "title": "Citizen Kane",
-      "rating": "5",
+      "title": "Be Kind Rewind",
+      "rating": "3",
       "id": 9,
-      "genre": "Drama",
-      "poster": "citizenkane.jpg"
+      "genre": "Action",
+      "poster": "bekindrewind.jpg"
     },
     {
       "title": "Friday The 13th",
@@ -71,11 +71,11 @@
       "poster": "fridaythethirteenth.jpg"
     },
     {
-      "title": "The Room",
-      "rating": "1",
+      "title": "Dune",
+      "rating": "4",
       "id": 11,
-      "genre": "Drama",
-      "poster": "theroom.jpg"
+      "genre": "Sci-fi",
+      "poster": "dune.jpg"
     },
     {
       "title": "The Incredibles",
@@ -95,8 +95,50 @@
       "title": "Thankskilling",
       "rating": "2",
       "id": 14,
-      "genre": "Family",
+      "genre": "Horror",
       "poster": "thankskilling.jpg"
+    },
+    {
+      "title": "The Sound of Music",
+      "rating": "5",
+      "id": 15,
+      "genre": "Musical",
+      "poster": "soundofmusic.jpg"
+    },
+    {
+      "title": "The March of the Penguins",
+      "rating": "4",
+      "id": 16,
+      "genre": "Documentary",
+      "poster": "marchofpenguins.jpg"
+    },
+    {
+      "title": "The Good, the Bad, and the Ugly",
+      "rating": "4",
+      "id": 17,
+      "genre": "Western",
+      "poster": "goodbadugly.jpg"
+    },
+    {
+      "title": "Indiana Jones: Raiders of the Lost Ark",
+      "rating": "5",
+      "id": 18,
+      "genre": "Adventure",
+      "poster": "raiderslostark.jpg"
+    },
+    {
+      "title": "How to Lose a Guy in Ten Days",
+      "rating": "3",
+      "id": 19,
+      "genre": "Romance",
+      "poster": "loseguytendays.jpg"
+    },
+    {
+      "title": "Spice World: The Spice Girls Movie",
+      "rating": "1",
+      "id": 20,
+      "genre": "Family",
+      "poster": "spiceworld.jpg"
     }
   ]
 }

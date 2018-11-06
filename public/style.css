@@ -1,11 +1,20 @@
 html, body {
     height: 100%;
     font-family: 'Ubuntu', sans-serif;
-    background-color: #296EB4;
+    background-color: #3D2B56;
 }
 
 h1 {
     font-family: 'Philosopher', sans-serif;
+    color: #3d2b56;
+}
+
+.dark-purple {
+    background-color: #3D2B56;
+}
+
+.lighter-purple {
+    background-color: #908EAF;
 }
 
 .container {
@@ -13,7 +22,7 @@ h1 {
     /*top: 50%;*/
     /*transform: translateY(-100%);*/
     text-align: center;
-    background-color: lightblue;
+    background-color: #8C93A8;
 }
 
 .carousel-item {
@@ -31,8 +40,12 @@ h1 {
     object-position: 10% 88%;
 }
 
-.carousel-item h5 {
-    text-shadow: 4px 4px 2px black;
+.shadowed {
+    text-shadow: 4px 4px 2px #3D2B56;
+}
+
+.shadowed2 {
+    text-shadow: 4px 4px 2px whitesmoke;
 }
 
 #a-button-that-works {
@@ -45,4 +58,12 @@ h1 {
     bottom: -1px;
     left: 2px;
     width: 20px;
+}
+
+td {
+    color: #3D2B56;
+}
+
+th {
+    color: whitesmoke;
 }
